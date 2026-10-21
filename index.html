@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPI - Makna Pancasila (Gorontalo)</title>
+    <!-- Tailwind CSS (Akan di-cache oleh browser setelah akses pertama untuk penggunaan offline) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        yellow: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                            800: '#854d0e',
+                            900: '#713f12',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefce8;
+            color: #334155;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .shake {
+            animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-1px, 0, 0); }
+            20%, 80% { transform: translate3d(2px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+            40%, 60% { transform: translate3d(4px, 0, 0); }
+        }
+
+        .card-matched {
+            background-color: #dcfce7 !important;
+            border-color: #22c55e !important;
+            color: #166534 !important;
+            transform: scale(0.98);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-yellow-500 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-xl md:text-2xl font-bold tracking-tight">MPI EduPancasila</h1>
+                <p class="text-yellow-100 text-xs md:text-sm">MTs Kelas VII - Wilayah Gorontalo</p>
+            </div>
+            <div class="bg-yellow-600 px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                Fase D
+            </div>
+        </div>
+        
+        <!-- Tab Navigasi Modul -->
+        <nav class="bg-yellow-600 shadow-inner">
+            <div class="max-w-4xl mx-auto px-4 flex gap-2 overflow-x-auto py-2">
+                <button onclick="switchTab('intro')" id="tab-intro" class="tab-btn px-4 py-2 rounded-lg bg-yellow-400 text-yellow-900 font-semibold text-sm transition whitespace-nowrap">1. Pendahuluan</button>
+                <button onclick="switchTab('materi')" id="tab-materi" class="tab-btn px-4 py-2 rounded-lg hover:bg-yellow-500 text-yellow-50 font-semibold text-sm transition whitespace-nowrap">2. Eksplorasi</button>
+                <button onclick="switchTab('kuis')" id="tab-kuis" class="tab-btn px-4 py-2 rounded-lg hover:bg-yellow-500 text-yellow-50 font-semibold text-sm transition whitespace-nowrap">3. Kuis Formatif</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow p-4 max-w-4xl mx-auto w-full">
+        
+        <!-- Modul 1: Pendahuluan -->
+        <section id="intro" class="module-content fade-in space-y-6 block">
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-xl border-t-4 border-yellow-400 relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 w-32 h-32 bg-yellow-100 rounded-full opacity-50"></div>
+                
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 z-10 relative">Assalamu'alaikum, Sobat Madrasah!</h2>
+                <p class="text-gray-600 leading-relaxed mb-4 z-10 relative">
+                    Selamat datang di modul interaktif Pendidikan Kewarganegaraan. Tahukah kamu bahwa nilai-nilai Pancasila sangat dekat dengan keseharian kita di Gorontalo? 
+                    Baik saat menemani Ayah melaut mencari ikan di perairan Bone Bolango, maupun saat bergotong-royong memanen jagung di ladang.
+                </p>
+                
+                <div class="bg-yellow-50 rounded-xl p-4 border border-yellow-200 mb-4 flex items-start gap-4">
+                    <div class="bg-yellow-400 p-2 rounded-lg text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-yellow-800">Tujuan Belajar Hari Ini:</h3>
+                        <p class="text-sm text-gray-700">Kamu akan mampu mengidentifikasi dan menjelaskan makna Sila-Sila Pancasila dalam kehidupan sehari-hari, khususnya di lingkungan pesisir dan agraris daerah kita.</p>
+                    </div>
+                </div>
+                
+                <!-- Form Data Diri -->
+                <div id="student-form" class="bg-yellow-50 rounded-xl p-5 border border-yellow-200 mb-6">
+                    <h3 class="font-bold text-yellow-800 mb-4 text-lg">📝 Isi Data Diri Sebelum Memulai:</h3>
+                    <input type="text" id="nama-siswa" placeholder="Nama Lengkap" class="w-full p-3 mb-3 border border-yellow-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-sm">
+                    <input type="text" id="kelas-siswa" placeholder="Kelas (Contoh: VII-A)" class="w-full p-3 mb-3 border border-yellow-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-sm">
+                    <p id="form-error" class="text-red-600 text-sm hidden mb-4 font-semibold">⚠️ Nama dan Kelas wajib diisi!</p>
+                    <button onclick="mulaiBelajar()" class="w-full md:w-auto bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-xl shadow-md transition transform hover:-translate-y-1">
+                        Mulai Eksplorasi 🚀
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modul 2: Eksplorasi & Interaktif -->
+        <section id="materi" class="module-content fade-in hidden space-y-6">
+            
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-yellow-400">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Ringkasan Materi: Makna Sila Pancasila</h2>
+                <p class="text-gray-600 mb-6">Sebelum bermain, mari pelajari makna setiap sila Pancasila beserta contoh penerapannya di lingkungan kita sehari-hari!</p>
+                
+                <div class="space-y-4 mb-8">
+                    <!-- Sila 1 -->
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-yellow-400 text-yellow-900 rounded-full flex items-center justify-center font-bold text-xl shadow-inner">1</div>
+                        <div>
+                            <h3 class="font-bold text-yellow-800 text-lg">Ketuhanan Yang Maha Esa</h3>
+                            <p class="text-sm text-gray-700 mt-1"><strong>Makna:</strong> Bangsa Indonesia meyakini adanya Tuhan, saling menghormati kebebasan beragama, dan tidak memaksakan agama kepada orang lain.</p>
+                            <p class="text-sm text-gray-600 mt-2 bg-white p-2 rounded border border-yellow-100"><em>Contoh:</em> Berdoa sebelum nelayan melaut di Teluk Tomini, serta menghormati teman MTs yang sedang beribadah.</p>
+                        </div>
+                    </div>
+                    <!-- Sila 2 -->
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-yellow-400 text-yellow-900 rounded-full flex items-center justify-center font-bold text-xl shadow-inner">2</div>
+                        <div>
+                            <h3 class="font-bold text-yellow-800 text-lg">Kemanusiaan yang Adil dan Beradab</h3>
+                            <p class="text-sm text-gray-700 mt-1"><strong>Makna:</strong> Mengakui persamaan derajat, hak, dan kewajiban sesama manusia, serta gemar melakukan kegiatan kemanusiaan.</p>
+                            <p class="text-sm text-gray-600 mt-2 bg-white p-2 rounded border border-yellow-100"><em>Contoh:</em> Membantu tetangga yang terkena musibah banjir rob di pesisir pantai tanpa melihat latar belakangnya.</p>
+                        </div>
+                    </div>
+                    <!-- Sila 3 -->
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-yellow-400 text-yellow-900 rounded-full flex items-center justify-center font-bold text-xl shadow-inner">3</div>
+                        <div>
+                            <h3 class="font-bold text-yellow-800 text-lg">Persatuan Indonesia</h3>
+                            <p class="text-sm text-gray-700 mt-1"><strong>Makna:</strong> Mengutamakan kepentingan bangsa dan negara di atas kepentingan pribadi atau golongan, serta memelihara ketertiban dunia.</p>
+                            <p class="text-sm text-gray-600 mt-2 bg-white p-2 rounded border border-yellow-100"><em>Contoh:</em> Menerapkan tradisi <strong>Huyula</strong> (gotong royong) dalam membersihkan lingkungan madrasah atau desa.</p>
+                        </div>
+                    </div>
+                    <!-- Sila 4 -->
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-yellow-400 text-yellow-900 rounded-full flex items-center justify-center font-bold text-xl shadow-inner">4</div>
+                        <div>
+                            <h3 class="font-bold text-yellow-800 text-lg">Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan</h3>
+                            <p class="text-sm text-gray-700 mt-1"><strong>Makna:</strong> Mengutamakan musyawarah mufakat dalam mengambil keputusan bersama dan tidak memaksakan kehendak.</p>
+                            <p class="text-sm text-gray-600 mt-2 bg-white p-2 rounded border border-yellow-100"><em>Contoh:</em> Rapat kelompok nelayan atau petani jagung untuk mengambil keputusan bersama demi kebaikan seluruh anggota.</p>
+                        </div>
+                    </div>
+                    <!-- Sila 5 -->
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-yellow-400 text-yellow-900 rounded-full flex items-center justify-center font-bold text-xl shadow-inner">5</div>
+                        <div>
+                            <h3 class="font-bold text-yellow-800 text-lg">Keadilan Sosial bagi Seluruh Rakyat Indonesia</h3>
+                            <p class="text-sm text-gray-700 mt-1"><strong>Makna:</strong> Bersikap adil terhadap sesama, menghormati hak orang lain, dan suka bekerja keras untuk kemajuan bersama.</p>
+                            <p class="text-sm text-gray-600 mt-2 bg-white p-2 rounded border border-yellow-100"><em>Contoh:</em> Koperasi Unit Desa (KUD) membagikan bantuan bibit jagung secara adil kepada semua petani tanpa pilih kasih.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-yellow-400 mt-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Aktivitas: Cocokkan Sila Pancasila</h2>
+                <p class="text-sm text-gray-500 mb-6">Uji pemahamanmu dari materi di atas! Pilih salah satu aktivitas warga di bawah ini, lalu klik lambang Sila yang paling sesuai dengan aktivitas tersebut!</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Sisi Kiri: Aktivitas (Acak) -->
+                    <div class="space-y-3">
+                        <h3 class="font-semibold text-gray-700 mb-3 border-b-2 border-yellow-200 pb-2">1. Pilih Aktivitas:</h3>
+                        <div id="activity-container" class="space-y-2">
+                            <!-- Tombol aktivitas dirender via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Sisi Kanan: Sila -->
+                    <div class="space-y-3">
+                        <h3 class="font-semibold text-gray-700 mb-3 border-b-2 border-yellow-200 pb-2">2. Cocokkan ke Sila:</h3>
+                        <div class="grid grid-cols-1 gap-2">
+                            <button onclick="checkMatch(1)" class="sila-btn border-2 border-gray-200 rounded-xl p-3 flex items-center gap-4 hover:bg-yellow-50 transition w-full text-left">
+                                <div class="w-10 h-10 bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center font-bold">1</div>
+                                <span class="font-semibold text-gray-700 text-sm">Ketuhanan YME</span>
+                            </button>
+                            <button onclick="checkMatch(2)" class="sila-btn border-2 border-gray-200 rounded-xl p-3 flex items-center gap-4 hover:bg-yellow-50 transition w-full text-left">
+                                <div class="w-10 h-10 bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center font-bold">2</div>
+                                <span class="font-semibold text-gray-700 text-sm">Kemanusiaan yang Adil & Beradab</span>
+                            </button>
+                            <button onclick="checkMatch(3)" class="sila-btn border-2 border-gray-200 rounded-xl p-3 flex items-center gap-4 hover:bg-yellow-50 transition w-full text-left">
+                                <div class="w-10 h-10 bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center font-bold">3</div>
+                                <span class="font-semibold text-gray-700 text-sm">Persatuan Indonesia</span>
+                            </button>
+                            <button onclick="checkMatch(4)" class="sila-btn border-2 border-gray-200 rounded-xl p-3 flex items-center gap-4 hover:bg-yellow-50 transition w-full text-left">
+                                <div class="w-10 h-10 bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center font-bold">4</div>
+                                <span class="font-semibold text-gray-700 text-sm">Kerakyatan yang Dipimpin oleh Hikmat...</span>
+                            </button>
+                            <button onclick="checkMatch(5)" class="sila-btn border-2 border-gray-200 rounded-xl p-3 flex items-center gap-4 hover:bg-yellow-50 transition w-full text-left">
+                                <div class="w-10 h-10 bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center font-bold">5</div>
+                                <span class="font-semibold text-gray-700 text-sm">Keadilan Sosial bagi Seluruh Rakyat...</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pesan Feedback Interaktif -->
+                <div id="match-feedback" class="mt-6 p-4 rounded-xl hidden text-center font-semibold"></div>
+
+                <div class="mt-8 text-center hidden" id="lanjut-kuis-btn">
+                    <p class="text-green-600 font-bold mb-4">Hebat! Kamu berhasil mencocokkan semua aktivitas dengan tepat.</p>
+                    <button onclick="switchTab('kuis')" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-xl shadow-md transition">
+                        Lanjut ke Kuis Formatif 📝
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modul 3: Kuis Formatif -->
+        <section id="kuis" class="module-content fade-in hidden space-y-6">
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-yellow-400 relative">
+                
+                <!-- Area Pertanyaan -->
+                <div id="quiz-container">
+                    <div class="flex justify-between items-center mb-6 border-b-2 border-gray-100 pb-4">
+                        <h2 class="text-xl font-bold text-gray-800">Kuis Evaluasi</h2>
+                        <span id="quiz-progress" class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">Soal 1 / 5</span>
+                    </div>
+
+                    <p id="question-text" class="text-lg md:text-xl text-gray-800 font-medium mb-6 leading-relaxed"></p>
+
+                    <div id="options-container" class="space-y-3">
+                        <!-- Opsi digenerate via JS -->
+                    </div>
+                </div>
+
+                <!-- Area Umpan Balik (Feedback Kuis) -->
+                <div id="quiz-feedback" class="mt-6 hidden">
+                    <div id="feedback-box" class="p-4 rounded-xl mb-4 text-sm md:text-base shadow-sm"></div>
+                    <button id="next-question-btn" onclick="nextQuestion()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl transition">
+                        Soal Berikutnya ➡️
+                    </button>
+                </div>
+
+                <!-- Area Hasil Akhir (Score) -->
+                <div id="result-container" class="hidden text-center py-8">
+                    <div class="inline-block bg-yellow-100 p-6 rounded-full mb-4">
+                        <svg class="w-16 h-16 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Luar Biasa!</h2>
+                    <p class="text-gray-600 mb-4">Kamu telah menyelesaikan modul ini.</p>
+                    <div class="text-5xl font-extrabold text-yellow-500 mb-6" id="final-score">100</div>
+                    <p id="score-message" class="text-gray-700 font-medium bg-yellow-50 p-4 rounded-lg inline-block border border-yellow-200"></p>
+                    
+                    <!-- Indikator Simpan Database -->
+                    <div id="save-status" class="mt-6 p-4 rounded-xl text-sm font-bold shadow-sm hidden max-w-md mx-auto"></div>
+
+                    <div class="mt-8">
+                        <button onclick="resetApp()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-6 rounded-lg transition mr-2">Mulai Ulang</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-yellow-800 text-yellow-200 text-center py-4 text-xs mt-auto">
+        <p>MPI Pendidikan Kewarganegaraan | MTs Kelas VII | Dirancang untuk Wilayah Gorontalo</p>
+    </footer>
+
+    <script>
+        // --- 0. KONFIGURASI DATABASE ---
+        // GANTI LINK DI BAWAH INI DENGAN URL APLIKASI WEB (APPS SCRIPT) ANDA
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzGt0WRBNgre0RCnOiv651Fm06UFIzGl2hdPK7U4ydctgmPpDgOCxRHypxTq0FwzVTAdw/exec'; 
+        
+        let dataSiswa = { nama: "", kelas: "" };
+        let historiJawaban = [];
+        let jumlahBenar = 0;
+        let jumlahSalah = 0;
+
+        // --- 1. LOGIKA NAVIGASI TAB ---
+        function mulaiBelajar() {
+            const nama = document.getElementById('nama-siswa').value.trim();
+            const kelas = document.getElementById('kelas-siswa').value.trim();
+            const errorMsg = document.getElementById('form-error');
+
+            if (nama === "" || kelas === "") {
+                errorMsg.classList.remove('hidden');
+                errorMsg.classList.add('shake');
+                setTimeout(() => errorMsg.classList.remove('shake'), 400);
+            } else {
+                errorMsg.classList.add('hidden');
+                dataSiswa.nama = nama;
+                dataSiswa.kelas = kelas;
+                switchTab('materi');
+            }
+        }
+
+        function switchTab(tabId) {
+            // Sembunyikan semua modul
+            document.querySelectorAll('.module-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            // Tampilkan modul yang dipilih
+            const selectedModule = document.getElementById(tabId);
+            selectedModule.classList.remove('hidden');
+            selectedModule.classList.add('block');
+
+            // Update style tombol tab
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('bg-yellow-400', 'text-yellow-900');
+                el.classList.add('text-yellow-50');
+            });
+            const activeBtn = document.getElementById('tab-' + tabId);
+            activeBtn.classList.remove('text-yellow-50');
+            activeBtn.classList.add('bg-yellow-400', 'text-yellow-900');
+        }
+
+        // --- 2. LOGIKA GAME MENCOCOKKAN (EKSPLORASI) ---
+        const activities = [
+            { id: 'act1', text: "Mensyukuri tangkapan ikan yang berlimpah dengan doa bersama.", sila: 1 },
+            { id: 'act2', text: "Membantu tetangga petani jagung yang sedang sakit parah.", sila: 2 },
+            { id: 'act3', text: "Tradisi Huyula (Gotong Royong) membersihkan pesisir pantai.", sila: 3 },
+            { id: 'act4', text: "Musyawarah kelompok nelayan untuk membagi area mencari ikan.", sila: 4 },
+            { id: 'act5', text: "KUD membagikan bibit jagung secara merata dan adil kepada seluruh anggota.", sila: 5 }
+        ];
+
+        let selectedActivityId = null;
+        let matchedCount = 0;
+
+        // Shuffle fungsi untuk mengacak urutan aktivitas
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        function renderActivities() {
+            const container = document.getElementById('activity-container');
+            container.innerHTML = '';
+            
+            const shuffled = shuffle([...activities]);
+            
+            shuffled.forEach(act => {
+                const btn = document.createElement('button');
+                btn.id = act.id;
+                btn.className = `w-full text-left p-3 rounded-xl border-2 border-gray-200 bg-white text-gray-700 text-sm hover:border-yellow-400 hover:shadow-md transition focus:outline-none focus:ring-2 focus:ring-yellow-400`;
+                btn.innerText = act.text;
+                btn.onclick = () => selectActivity(act.id, btn);
+                container.appendChild(btn);
+            });
+        }
+
+        function selectActivity(id, element) {
+            // Jika sudah dicocokkan, abaikan
+            if(element.classList.contains('card-matched')) return;
+
+            // Reset seleksi sebelumnya
+            document.querySelectorAll('#activity-container button:not(.card-matched)').forEach(btn => {
+                btn.classList.remove('border-yellow-500', 'bg-yellow-50', 'ring-2', 'ring-yellow-400');
+                btn.classList.add('border-gray-200', 'bg-white');
+            });
+
+            // Set seleksi baru
+            selectedActivityId = id;
+            element.classList.remove('border-gray-200', 'bg-white');
+            element.classList.add('border-yellow-500', 'bg-yellow-50', 'ring-2', 'ring-yellow-400');
+            
+            const feedback = document.getElementById('match-feedback');
+            feedback.className = "mt-4 p-3 rounded-xl text-center text-sm font-semibold bg-blue-50 text-blue-700 block fade-in";
+            feedback.innerText = "Aktivitas dipilih! Sekarang klik Sila (1-5) di sebelah kanan yang sesuai.";
+        }
+
+        function checkMatch(silaNumber) {
+            const feedback = document.getElementById('match-feedback');
+
+            if (!selectedActivityId) {
+                feedback.className = "mt-4 p-3 rounded-xl text-center text-sm font-semibold bg-red-50 text-red-700 block fade-in";
+                feedback.innerText = "Pilih aktivitas di sebelah kiri terlebih dahulu!";
+                return;
+            }
+
+            const activity = activities.find(a => a.id === selectedActivityId);
+            const actElement = document.getElementById(selectedActivityId);
+
+            if (activity.sila === silaNumber) {
+                // Benar
+                actElement.classList.add('card-matched');
+                actElement.classList.remove('border-yellow-500', 'bg-yellow-50', 'ring-2', 'ring-yellow-400');
+                actElement.innerHTML = `✓ ${activity.text}`;
+                
+                feedback.className = "mt-4 p-3 rounded-xl text-center text-sm font-semibold bg-green-100 text-green-800 block fade-in";
+                feedback.innerText = "Tepat Sekali! Nilai Pancasila diterapkan dengan benar.";
+                
+                selectedActivityId = null;
+                matchedCount++;
+
+                if (matchedCount === activities.length) {
+                    document.getElementById('lanjut-kuis-btn').classList.remove('hidden');
+                    document.getElementById('lanjut-kuis-btn').classList.add('fade-in');
+                    feedback.hidden = true;
+                }
+            } else {
+                // Salah
+                feedback.className = "mt-4 p-3 rounded-xl text-center text-sm font-semibold bg-red-100 text-red-800 block shake";
+                feedback.innerText = "Coba lagi! Pikirkan kembali makna silanya.";
+                actElement.classList.add('shake');
+                setTimeout(() => actElement.classList.remove('shake'), 400);
+            }
+        }
+
+        // --- 3. LOGIKA KUIS FORMATIF ---
+        const quizData = [
+            {
+                question: "Nelayan di daerah Leato selalu menyisihkan sebagian hasil tangkapan untuk disumbangkan ke panti asuhan tanpa membedakan latar belakang. Sikap ini merupakan wujud penerapan Pancasila, terutama sila ke...",
+                options: ["Sila 1", "Sila 2", "Sila 3", "Sila 4"],
+                correct: 1, // Index of correct option
+                explanation: "Menyumbang dan membantu sesama manusia yang membutuhkan tanpa membedakan latar belakang adalah wujud menjunjung tinggi nilai kemanusiaan (Sila ke-2: Kemanusiaan yang Adil dan Beradab)."
+            },
+            {
+                question: "Tradisi 'Huyula' di Gorontalo mengajarkan masyarakat untuk bergotong-royong membangun fasilitas umum atau membuka lahan pertanian. Nilai luhur ini selaras dengan makna...",
+                options: ["Sila 2", "Sila 3", "Sila 4", "Sila 5"],
+                correct: 1, 
+                explanation: "Huyula atau gotong royong menguatkan kebersamaan dan persatuan masyarakat. Ini merupakan pengamalan Sila ke-3 (Persatuan Indonesia)."
+            },
+            {
+                question: "Saat panen jagung melimpah, Pak Budi sebagai ketua kelompok tani mengadakan rapat warga untuk menentukan harga jual agar tidak ada petani yang dirugikan tengkulak. Rapat ini mewujudkan sila ke...",
+                options: ["Sila 2", "Sila 3", "Sila 4", "Sila 5"],
+                correct: 2,
+                explanation: "Mengadakan rapat untuk mencapai mufakat adalah ciri khas pengambilan keputusan di Indonesia yang mencerminkan Sila ke-4 (Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan...)."
+            },
+            {
+                question: "Pemerintah daerah mengalokasikan bantuan pupuk subsidi secara merata ke seluruh kecamatan agraris di Gorontalo tanpa pilih kasih. Kebijakan ini merupakan contoh penerapan Sila ke...",
+                options: ["Sila 1", "Sila 3", "Sila 4", "Sila 5"],
+                correct: 3,
+                explanation: "Pembagian yang merata dan proposional demi kesejahteraan bersama mewujudkan nilai keadilan pada Sila ke-5 (Keadilan Sosial bagi Seluruh Rakyat Indonesia)."
+            },
+            {
+                question: "Sebelum perahu berlayar mencari ikan tuna, para nelayan selalu menyempatkan berdoa bersama memohon keselamatan kepada Tuhan. Ini adalah pengamalan dari Sila...",
+                options: ["Sila 1", "Sila 2", "Sila 4", "Sila 5"],
+                correct: 0,
+                explanation: "Berdoa memohon keselamatan menunjukkan keyakinan dan keberserahan diri kepada Tuhan Yang Maha Esa, mutlak sebagai pengamalan Sila ke-1."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const q = quizData[currentQuestion];
+            document.getElementById('quiz-progress').innerText = `Soal ${currentQuestion + 1} / ${quizData.length}`;
+            document.getElementById('question-text').innerText = q.question;
+            
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+            
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left p-4 rounded-xl border-2 border-gray-200 hover:bg-yellow-50 hover:border-yellow-400 transition font-medium text-gray-700 focus:outline-none';
+                btn.innerText = opt;
+                btn.onclick = () => selectAnswer(index, btn);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            document.getElementById('next-question-btn').classList.add('hidden');
+        }
+
+        function selectAnswer(selectedIndex, btnElement) {
+            // Kunci tombol agar tidak bisa diklik dua kali
+            const buttons = document.getElementById('options-container').querySelectorAll('button');
+            buttons.forEach(b => {
+                b.disabled = true;
+                b.classList.remove('hover:bg-yellow-50', 'hover:border-yellow-400');
+            });
+
+            const q = quizData[currentQuestion];
+            const feedbackBox = document.getElementById('feedback-box');
+            const feedbackContainer = document.getElementById('quiz-feedback');
+            
+            feedbackContainer.classList.remove('hidden');
+            feedbackContainer.classList.add('fade-in');
+            document.getElementById('next-question-btn').classList.remove('hidden');
+
+            if (selectedIndex === q.correct) {
+                // Jawaban Benar
+                btnElement.classList.add('bg-green-100', 'border-green-500', 'text-green-800');
+                feedbackBox.className = 'p-4 rounded-xl mb-4 text-sm md:text-base border border-green-200 bg-green-50 text-green-900';
+                feedbackBox.innerHTML = `<strong>✅ Benar!</strong> <br><br> <strong>Pembahasan:</strong> ${q.explanation}`;
+                score += 20;
+                jumlahBenar++;
+            } else {
+                // Jawaban Salah
+                btnElement.classList.add('bg-red-100', 'border-red-500', 'text-red-800');
+                // Highlight yang benar
+                buttons[q.correct].classList.add('bg-green-50', 'border-green-500', 'text-green-700');
+                
+                feedbackBox.className = 'p-4 rounded-xl mb-4 text-sm md:text-base border border-red-200 bg-red-50 text-red-900';
+                feedbackBox.innerHTML = `<strong>❌ Kurang Tepat.</strong> <br><br> <strong>Pembahasan:</strong> ${q.explanation}`;
+                jumlahSalah++;
+            }
+            
+            // Simpan jawaban siswa (teks opsi) ke array untuk dikirim ke database
+            historiJawaban.push(q.options[selectedIndex]);
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            
+            const resultContainer = document.getElementById('result-container');
+            resultContainer.classList.remove('hidden');
+            resultContainer.classList.add('fade-in');
+            
+            document.getElementById('final-score').innerText = score;
+            
+            let message = "";
+            if(score === 100) message = "Luar biasa! Kamu sangat memahami penerapan nilai Pancasila di lingkunganmu.";
+            else if(score >= 60) message = "Bagus! Kamu sudah memahami sebagian besar materi. Tetap rajin belajar ya.";
+            else message = "Jangan menyerah! Coba eksplorasi materinya lagi untuk memperdalam pemahamanmu.";
+            
+            document.getElementById('score-message').innerText = message;
+            
+            // Panggil fungsi kirim data ke Spreadsheets
+            if(SCRIPT_URL !== 'MASUKKAN_URL_GOOGLE_APPS_SCRIPT_ANDA_DISINI') {
+                kirimDataKeDatabase();
+            } else {
+                const statusBox = document.getElementById('save-status');
+                statusBox.classList.remove('hidden');
+                statusBox.classList.add('bg-red-100', 'text-red-800');
+                statusBox.innerText = "⚠️ Peringatan Sistem: URL Database Guru belum disetel.";
+            }
+        }
+
+        function kirimDataKeDatabase() {
+            const statusBox = document.getElementById('save-status');
+            statusBox.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+            statusBox.classList.add('bg-blue-100', 'text-blue-800', 'border', 'border-blue-200');
+            statusBox.innerHTML = `<span class="animate-pulse">⏳ Sedang mengirim data ke server Guru...</span>`;
+
+            const payload = {
+                nama: dataSiswa.nama,
+                kelas: dataSiswa.kelas,
+                skor: score,
+                benar: jumlahBenar,
+                salah: jumlahSalah,
+                jawaban: historiJawaban
+            };
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                // Kita gunakan method no-cors text/plain by default dari JSON string untuk meminimalisir isu CORS
+                body: JSON.stringify(payload)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    statusBox.classList.replace('bg-blue-100', 'bg-green-100');
+                    statusBox.classList.replace('text-blue-800', 'text-green-800');
+                    statusBox.classList.replace('border-blue-200', 'border-green-200');
+                    statusBox.innerHTML = "✅ <strong>Berhasil!</strong> Hasil belajarmu sudah terekam di buku nilai Guru.";
+                } else {
+                    throw new Error(data.message);
+                }
+            })
+            .catch(error => {
+                console.error("Fetch Error:", error);
+                statusBox.classList.replace('bg-blue-100', 'bg-red-100');
+                statusBox.classList.replace('text-blue-800', 'text-red-800');
+                statusBox.classList.replace('border-blue-200', 'border-red-200');
+                statusBox.innerHTML = "❌ <strong>Gagal Mengirim Data.</strong> Terjadi masalah pada koneksi internet atau pengaturan server.";
+            });
+        }
+
+        function resetApp() {
+            // Reset state
+            matchedCount = 0;
+            selectedActivityId = null;
+            currentQuestion = 0;
+            score = 0;
+            historiJawaban = [];
+            jumlahBenar = 0;
+            jumlahSalah = 0;
+            
+            // Reset form
+            document.getElementById('nama-siswa').value = '';
+            document.getElementById('kelas-siswa').value = '';
+            document.getElementById('save-status').classList.add('hidden');
+            
+            // Reset UI Eksplorasi
+            document.getElementById('match-feedback').classList.add('hidden');
+            document.getElementById('lanjut-kuis-btn').classList.add('hidden');
+            renderActivities();
+
+            // Reset UI Kuis
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('result-container').classList.add('hidden');
+            loadQuestion();
+
+            // Kembali ke modul 1
+            switchTab('intro');
+            
+            // Scroll ke atas
+            window.scrollTo(0, 0);
+        }
+
+        window.onload = () => {
+            renderActivities();
+            loadQuestion();
+        };
+
+    </script>
+</body>
+</html>
